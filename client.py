@@ -8,7 +8,7 @@ with open(CONFIG_FILE, encoding="utf-8") as f:
 
 def chat_once(q, key, url):
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "text/plain"}
-    r = httpx.post(f"{url}/chat", content=q, headers=headers, timeout=30)
+    r = httpx.post(f"{url}/chat", content=q, headers=headers, timeout=60)
     r.raise_for_status()
     return r.text
 
